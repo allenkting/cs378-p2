@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/allenkting.github.io/cs378-p2/static/css/main.69f8bf48.css",
+    "main.js": "/allenkting.github.io/cs378-p2/static/js/main.3f85327e.js",
+    "static/js/787.adad572c.chunk.js": "/allenkting.github.io/cs378-p2/static/js/787.adad572c.chunk.js",
+    "index.html": "/allenkting.github.io/cs378-p2/index.html",
+    "main.69f8bf48.css.map": "/allenkting.github.io/cs378-p2/static/css/main.69f8bf48.css.map",
+    "main.3f85327e.js.map": "/allenkting.github.io/cs378-p2/static/js/main.3f85327e.js.map",
+    "787.adad572c.chunk.js.map": "/allenkting.github.io/cs378-p2/static/js/787.adad572c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.69f8bf48.css",
+    "static/js/main.3f85327e.js"
+  ]
+}
