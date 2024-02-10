@@ -1,7 +1,7 @@
 import './App.css';
 import MenuItem from './components/MenuItem';
 
-// import 'bootstrap/dist/css/bootstrap.min.css'; // This imports bootstrap css styles. You can use bootstrap or your own classes by using the className attribute in your elements.
+import 'bootstrap/dist/css/bootstrap.min.css'; // This imports bootstrap css styles. You can use bootstrap or your own classes by using the className attribute in your elements.
 
 // Menu data. An array of objects where each object represents a menu item. Each menu item has an id, title, description, image name, and price.
 // You can use the image name to get the image from the images folder.
@@ -81,11 +81,32 @@ const menuItems = [
 
 function App() {
   return (
-    <div>
-      <h1>Menu</h1>
-      <div className="menu">
-        {/* Display menu items dynamicaly here by iterating over the provided menuItems */}
-        <MenuItem title={menuItems[0].title} /> {/* Example for how to use a component */}
+    <div class="container">
+      <div class="row align-items-end justify-content-center title">
+        <div class="col text-center logo-text">
+          <img src="images/dragonfruit.png" class="img" width="10%" alt="Dragonfruit"/> 
+          <span class="align-bottom">DRAGON CAFE</span>
+        </div>
+      </div>
+
+      <div class="row align-items-end justify-content-center subtitle1">
+        <div class="col text-center">
+          Delicious, From-Scratch Recipes Close at Hand
+        </div>
+      </div>
+
+      <div class="row align-items-start justify-content-center subtitle2">
+        <div class="col text-center">
+          The Fresh Choice of UT!
+        </div>
+      </div>
+
+      <div class="row align-items-center menu">
+        {menuItems.map((item) => (
+          <MenuItem title={item.title} 
+          desc={item.description} imageName={item.imageName}
+          price={item.price}/>
+        ))}
       </div>
     </div>
   );

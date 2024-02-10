@@ -1,8 +1,95 @@
-/* 
-  Style your elements by creating CSS classes here.
-  Below, you can see an example of a class called "menu" that changes the color of the text to blue. Modify according to your needs.
-*/
+html, body {
+  height: 100%
+}
+body {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+.container {
+  height: 100%;
+  max-height:100%;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  width: auto;
+}
+.logo-text {
+  font-size:xx-large;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.title {
+  flex-basis: 12.5%;
+  display:flex;
+  align-items:stretch;
+}
+.subtitle1 {
+  flex-basis: 10%;
+  font-size: large;
 
+  font-family: "Snell Roundhand", cursive;
+  color:firebrick;
+
+  display: flex;
+  align-items: stretch;
+}
+.subtitle2 {
+  flex-basis: 12.5%;
+  font-size: xx-large;
+  color: grey;
+
+  display: flex;
+  align-items: stretch;
+}
 .menu {
-  color: blue;
+  flex-basis: 65%;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  width: auto;
+}
+.menu-item {
+  width: 95%;
+  display: flex;
+  align-items: stretch;
+  padding:2%;
+}
+.item-desc {
+  height:100%;
+}
+.item-name {
+  height:100%;
+  font-weight: bold;
+  font-size:large;
+}
+.item-price {
+  height:100%;
+}
+
+.but {
+  background-color: lightgray;
+  border-radius: 15%;
+  border-color: aliceblue;
+  width:80%;
+}
+
+.item-info {
+  height:100%;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+
+  flex-basis:65%;
+}
+.itimg {
+  border-radius: 10%;
+  width: 100%;
+  height:auto;
+}
+.item-img {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-basis:35%;
+  height:100%;
 }
