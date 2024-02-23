@@ -110,6 +110,27 @@ function App() {
     }
     setItemCounts(temp)
   }
+  const showAll = (itemCounts) => {
+    let temp = {}
+    Object.assign(temp, itemCounts)
+    let totalItems = 0
+
+    let str = ""
+    for (const [k,v] of Object.entries(temp)) {
+      let name = menuItems[k-1].title
+      totalItems += v
+      if (v > 0) {
+        let num = v.toString()
+        str += num + " " + name + "\n"
+      }
+    }
+    if (totalItems > 0) {
+      alert(str)
+    } else {
+      alert("No items in cart")
+    }
+    clearCount(itemCounts)
+  }
 
   // State for total price
   const [totalPrice, setTotalPrice] = useState(0); 
@@ -119,6 +140,7 @@ function App() {
   const decrementPrice = (price) => {
     setTotalPrice(totalPrice - price)
   }
+
 
   return (
     <div class="container">
@@ -159,9 +181,7 @@ function App() {
         </div>
         <div class="col text-center">
           <button type="button" class="but2" onClick={() => {
-            alert(
-              "Order Placed!"
-            )
+            showAll(itemCounts)
           }}>
             Order
           </button>
