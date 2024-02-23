@@ -1,6 +1,5 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import gyoza from "../images/gyoza.png"
 // import katsu_curry from "../images/katsu-curry.png"
 // import matcha_cake from "../images/matcha-cake.png"
 // import mochi from "../images/mochi.png"
@@ -20,9 +19,10 @@ const MenuItem = ({id, title, desc, imageName, price, count,
     incrementItemCount, decrementItemCount,
     incrementPrice, decrementPrice}) => {
 
-    let imageSrc = "../images/" + imageName;
-    let priceStr = "$" + price;
+    let imageSrc = "images/" + imageName
+    let priceStr = "$" + price
     // const [count, setCount] = useState(0); 
+    console.log(imageSrc)
 
     return (
         <div class="row align-items-center menu-item">
