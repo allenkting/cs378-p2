@@ -1,5 +1,6 @@
 import './App.css';
 import MenuItem from './components/MenuItem';
+import Header from './components/Header';
 import React, {useState} from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css'; // This imports bootstrap css styles. You can use bootstrap or your own classes by using the className attribute in your elements.
@@ -80,6 +81,15 @@ const menuItems = [
   }
 ];
 
+const headerInfo = [
+  {
+    id:1,
+    title: "DRAGON CAFE",
+    sub1: "Delicious, From-Scratch Recipes Close at Hand",
+    sub2: "The Fresh Choice of UT!"
+  }
+]
+
 
 function App() {
   // State for individual item counts
@@ -144,24 +154,12 @@ function App() {
 
   return (
     <div class="container">
-      <div class="row align-items-end justify-content-center title">
-        <div class="col text-center logo-text">
-          <img src="images/dragonfruit.png" class="img" width="10%" alt="Dragonfruit"/> 
-          <span class="align-bottom">DRAGON CAFE</span>
-        </div>
-      </div>
-
-      <div class="row align-items-end justify-content-center subtitle1">
-        <div class="col text-center">
-          Delicious, From-Scratch Recipes Close at Hand
-        </div>
-      </div>
-
-      <div class="row align-items-start justify-content-center subtitle2">
-        <div class="col text-center">
-          The Fresh Choice of UT!
-        </div>
-      </div>
+      
+      <Header
+        title={headerInfo[0].title}
+        sub1={headerInfo[0].sub1}
+        sub2={headerInfo[0].sub2}
+      />
 
       <div class="row align-items-center menu">
         {menuItems.map((item) => (

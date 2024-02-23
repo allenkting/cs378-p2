@@ -1,7 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
-// import dragonfruit from "../images/dragonfruit.png"
-// import gyoza from "../images/gyoza.png"
+import gyoza from "../images/gyoza.png"
 // import katsu_curry from "../images/katsu-curry.png"
 // import matcha_cake from "../images/matcha-cake.png"
 // import mochi from "../images/mochi.png"
