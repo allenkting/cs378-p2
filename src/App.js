@@ -1,7 +1,9 @@
 import './App.css';
 import MenuItem from './components/MenuItem';
+import React, {useState} from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css'; // This imports bootstrap css styles. You can use bootstrap or your own classes by using the className attribute in your elements.
+// import { clear } from '@testing-library/user-event/dist/clear';
 
 // Menu data. An array of objects where each object represents a menu item. Each menu item has an id, title, description, image name, and price.
 // You can use the image name to get the image from the images folder.
@@ -80,6 +82,44 @@ const menuItems = [
 
 
 function App() {
+  // State for individual item counts
+  const [itemCounts, setItemCounts] = useState({});
+  const incrementItemCount = (id) => {
+    let temp = {}
+    Object.assign(temp, itemCounts)
+    if (temp[id]) {
+      temp[id] = temp[id] + 1
+    } else {
+      temp[id] = 1
+    }
+    setItemCounts(temp)
+  }
+  const decrementItemCount = (id) => {
+    let temp = {}
+    Object.assign(temp, itemCounts)
+    if (temp[id] > 0) {
+        temp[id] = temp[id] - 1
+    }
+    setItemCounts(temp)
+  }
+  const clearCount = (itemCounts) => {
+    let temp = {}
+    Object.assign(temp, itemCounts)
+    for (const [k,] of Object.entries(temp)) {
+      temp[k] = 0
+    }
+    setItemCounts(temp)
+  }
+
+  // State for total price
+  const [totalPrice, setTotalPrice] = useState(0); 
+  const incrementPrice = (price) => {
+    setTotalPrice(totalPrice + price)
+  }
+  const decrementPrice = (price) => {
+    setTotalPrice(totalPrice - price)
+  }
+
   return (
     <div class="container">
       <div class="row align-items-end justify-content-center title">
@@ -103,11 +143,39 @@ function App() {
 
       <div class="row align-items-center menu">
         {menuItems.map((item) => (
-          <MenuItem title={item.title} 
+          <MenuItem id = {item.id} title={item.title} 
           desc={item.description} imageName={item.imageName}
-          price={item.price}/>
+          price={item.price} count={itemCounts[item.id] || 0}
+          incrementItemCount={incrementItemCount}
+          decrementItemCount={decrementItemCount}
+          incrementPrice={incrementPrice}
+          decrementPrice={decrementPrice}/>
         ))}
       </div>
+      
+      <div class="row align-items-start justify-content-center cart">
+        <div class="col text-center">
+          Subtotal: ${Math.abs(totalPrice).toFixed(2)}
+        </div>
+        <div class="col text-center">
+          <button type="button" class="but2" onClick={() => {
+            alert(
+              "Order Placed!"
+            )
+          }}>
+            Order
+          </button>
+        </div>
+        <div class="col text-center" >
+          <button type="button" class="but2" onClick={() => {
+            setTotalPrice(0)
+            clearCount(itemCounts)
+          }}>
+            Clear All
+          </button>
+        </div>
+      </div>
+
     </div>
   );
 }

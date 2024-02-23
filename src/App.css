@@ -93,3 +93,17 @@ body {
   flex-basis:35%;
   height:100%;
 }
+
+.cart {
+  font-size: large;
+  color: black;
+
+  display: flex;
+  align-items: stretch;
+}
+
+.but2 {
+  background-color: lightblue;
+  border-radius: 15%;
+  border-color: aliceblue;
+}
