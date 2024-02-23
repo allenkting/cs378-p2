@@ -139,6 +139,7 @@ function App() {
     } else {
       alert("No items in cart")
     }
+    setTotalPrice(0)
     clearCount(itemCounts)
   }
 
